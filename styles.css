@@ -56,6 +56,10 @@ textarea {
 }
 
 textarea:focus {
+    box-shadow: 0 0 12px rgba(55, 71, 133, 0.5);
+}
+
+textarea:focus {
     border-color: #374785; /* Matches heading color */
     box-shadow: 0 0 8px rgba(55, 71, 133, 0.3);
 }
