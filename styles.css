@@ -16,7 +16,7 @@ body {
     color: #333;
 }
 
-/* Container styling for a centered card layout with extra ad space */
+/* Container styling for a centered card layout */
 .container {
     background-color: #ffffff;
     padding: 30px;
@@ -27,7 +27,7 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     position: relative;
-    min-height: 750px; /* Increased height to add space for the ad */
+    min-height: 750px; /* Increased height for better layout */
 }
 
 .container:hover {
