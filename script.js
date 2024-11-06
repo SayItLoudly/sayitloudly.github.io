@@ -37,18 +37,35 @@ function speakWord() {
 
         synth.speak(utterance);
 
-        const punctuationPause = (word.includes(".") || word.includes(",")) ? 600 : 300;
+        const punctuationPause = /[.,!?;:()&]/.test(word) ? 600 : 300; // Pause after punctuation (600ms for symbols)
         const pauseDuration = word.length * pauseDurationPerLetter;
 
         utterance.onend = function() {
             index++;
-            if (speaking && !paused) setTimeout(speakWord, pauseDuration);
+            if (speaking && !paused) {
+                setTimeout(speakWord, pauseDuration + punctuationPause); // Combine pause duration and punctuation pause
+            }
         };
     }
 }
 
 function formatWord(word) {
-    return word.replace(".", " fullstop").replace(",", " comma");
+    // Regex for handling punctuation attached to words (e.g., "word!" or "hello,")
+    // Adds spaces between word and punctuation to trigger pause
+    let formattedWord = word
+        .replace(/([.,!?;:()&])/g, ' $1 ') // Add space around punctuation for pauses
+        .replace(".", " fullstop")
+        .replace(",", " comma")
+        .replace("!", " exclamation")
+        .replace("?", " questionmark")
+        .replace(":", " colon")
+        .replace(";", " semicolon")
+        .replace("&", " and")
+        .replace("(", " openparenthesis")
+        .replace(")", " closeparenthesis");
+
+    // If there's no space between the word and punctuation, ensure pause between them
+    return formattedWord.trim();
 }
 
 function stopOrResume() {
