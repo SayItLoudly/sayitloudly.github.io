@@ -27,7 +27,7 @@ body {
     text-align: center;
     transition: transform 0.3s ease;
     position: relative;
-    min-height: 750px; /* Increased height for better layout */
+    min-height: 750px;
 }
 
 .container:hover {
@@ -37,7 +37,7 @@ body {
 /* Heading styling with a bold blue color */
 h1 {
     font-size: 1.8em;
-    color: #374785; /* Deep blue for title */
+    color: #374785;
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -57,11 +57,24 @@ textarea {
 
 textarea:focus {
     box-shadow: 0 0 12px rgba(55, 71, 133, 0.5);
+    border-color: #374785;
 }
 
-textarea:focus {
-    border-color: #374785; /* Matches heading color */
-    box-shadow: 0 0 8px rgba(55, 71, 133, 0.3);
+/* Dropdown styling */
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #b3cde0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #374785;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+    box-shadow: 0 0 12px rgba(55, 71, 133, 0.5);
 }
 
 /* Button styling with vibrant colors */
@@ -70,7 +83,7 @@ button {
     padding: 12px 24px;
     font-size: 1em;
     color: #fff;
-    background-color: #ff6b6b; /* Coral color for main buttons */
+    background-color: #ff6b6b;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -78,7 +91,7 @@ button {
 }
 
 button:hover {
-    background-color: #e63946; /* Darker coral on hover */
+    background-color: #e63946;
 }
 
 button:active {
@@ -86,7 +99,7 @@ button:active {
 }
 
 button + button {
-    margin-left: 10px; /* Adds spacing between buttons */
+    margin-left: 10px;
 }
 
 /* Slider container styling */
@@ -98,7 +111,7 @@ button + button {
 /* Slider label styling with a unique color */
 .slider-container label {
     font-weight: bold;
-    color: #0081a7; /* Teal for label text */
+    color: #0081a7;
     margin-bottom: 5px;
 }
 
@@ -117,7 +130,7 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
     height: 15px;
-    background-color: #ff6b6b; /* Matches button color */
+    background-color: #ff6b6b;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -139,7 +152,7 @@ input[type="range"]::-moz-range-thumb {
 /* Ad space styling at the bottom of the container */
 .ad-space {
     width: 100%;
-    height: 100px; /* Adjust as needed */
+    height: 100px;
     background-color: #f9f9f9;
     border-top: 1px solid #b3cde0;
     margin-top: 20px;
